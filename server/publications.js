@@ -2,6 +2,10 @@ Meteor.publish('items', function() {
   return Items.find({});
 });
 
+Meteor.publish('singlePost', function(id) {
+  return id && Items.find(id);
+});
+
 Meteor.publish('gotIts', function() {
   return Items.find({category: "got-it"});
 });
