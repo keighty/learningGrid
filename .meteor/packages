@@ -6,3 +6,11 @@
 standard-app-packages
 autopublish
 insecure
+iron-router
+spin
+glyphicons-halflings
+iron-router-progress
+accounts-ui-bootstrap-dropdown
+jquery-ui
+bootstrap
+accounts-password

@@ -1,0 +1,10 @@
+{
+  "packages": {
+    "iron-router": {},
+    "spin": {},
+    "glyphicons-halflings": {},
+    "iron-router-progress": {},
+    "accounts-ui-bootstrap-dropdown": {},
+    "jquery-ui": {}
+  }
+}
