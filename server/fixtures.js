@@ -11,7 +11,8 @@ if (Items.find().count() === 0) {
   var now = new Date().getTime();
 
   Items.insert({
-    description: "html",
+    title: "html",
+    description: "this is html",
     category: "got-it",
     userId: adminUser._id,
     postAuthor: adminUser.username,
@@ -19,7 +20,8 @@ if (Items.find().count() === 0) {
   });
 
   Items.insert({
-    description: "lisp",
+    title: "lisp",
+    description: "this is lisp",
     category: "learn-it",
     userId: adminUser._id,
     postAuthor: adminUser.username,
@@ -27,7 +29,8 @@ if (Items.find().count() === 0) {
   });
 
   Items.insert({
-    description: "clojure",
+    title: "clojure",
+    description: "this is clojure",
     category: "one-day",
     userId: adminUser._id,
     postAuthor: adminUser.username,
