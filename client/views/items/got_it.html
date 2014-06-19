@@ -1,3 +1,6 @@
 <template name="gotIt">
-<p>Hello</p>
+  <h3>Comfort Zone</h3>
+ {{#each gotIts}}
+  <button class="btn btn-primary" type="submit">{{> item}}</button>
+ {{/each}}
 </template>
