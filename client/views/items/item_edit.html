@@ -1,3 +1,32 @@
 <template name="itemEdit">
-<p>hello edit!</p>
+  <form class="main">
+    <div class="control-group">
+      <label class="control-label" for="title">Title</label>
+      <div class="controls">
+        <input name="title" type="text" value="{{title}}" />
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="description">Description</label>
+      <div class="controls">
+        <input name="description" type="text" value="{{description}}" />
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="category">Category</label>
+      <div class="controls">
+        <select class="form-control" name="category">
+          <option value="got-it" selected="{{isSelected 'got-it'}}">Got it</option>
+          <option value="learn-it" selected="{{isSelected 'learn-it'}}">Learn it</option>
+          <option value="one-day" selected="{{isSelected 'one-day'}}">How the heck?</option>
+        </select>
+      </div>
+    </div>
+    <div class="control-group">
+      <div class="controls">
+        <input type="submit" value="Submit" class="btn btn-primary" />
+        <a class="btn btn-danger delete" href="#">Delete</a>
+      </div>
+    </div>
+  </form>
 </template>
