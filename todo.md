@@ -1,3 +1,15 @@
-*[X] make item collection
-*[ ] make item templates (three swimlanes: got-it zone, learning zone, one-day zone)
-*[ ] make multiple accounts
+*[X] item collection
+*[X] item templates (three swimlanes: got-it zone, learning zone, one-day zone)
+*[X] user accounts
+*[X] packages: jquery-ui, accounts-ui-bootstrap-dropdown, accounts-ui, spin
+*[X] header and layout.
+*[X] itemsPage template and routes
+*[X] buttons link to learning page
+*[X] publication of items
+*[X] subscription to single items
+*[X] fixture data
+*[X] itemEdit template, actions, and routes
+*[X] itemSubmit template, actions and routes
+*[X] error handling.
+*[ ] add sub-collection for adding sources/urls to learning page
+*[ ] restrict items to single user
