@@ -5,7 +5,7 @@ Meteor.methods({
     var user = Meteor.user();
 
     if(!user)
-      throw new Meteor.Error(401, "You must log in before posting comments");
+      throw new Meteor.Error(401, "You must log in before adding items");
 
     item = _.extend(_.pick(itemAttributes, 'title', 'description', 'category'), {
       userId: user._id,
