@@ -1,9 +1,14 @@
 <template name="itemPage">
-  <div>
-    <div class="jumbotron">
-      <h3>{{title}}</h3>
-      <p>{{description}}</p>
-      <p><a class="btn btn-primary" href="{{pathFor 'itemEdit'}}">Edit</a></p>
+  <div class="row">
+    <div class="span2">
+      <ul class="nav nav-list">
+        <li class="nav-header">Item Settings</li>
+        <li><a href="{{pathFor 'itemEdit'}}">Edit</a></li>
+        <li><a href="#" class="delete">Delete</a></li>
+      </ul>
+    </div>
+    <div class="span4">
+      <h3>{{title}} <small>{{description}}</small></h3>
     </div>
   </div>
 </template>
