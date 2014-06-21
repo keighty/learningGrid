@@ -1,5 +1,10 @@
 Items = new Meteor.Collection('items');
 
+Items.allow({
+  update: ownsDocument,
+  remove: ownsDocument
+});
+
 Meteor.methods({
   addItem: function(itemAttributes){
     var user = Meteor.user();
