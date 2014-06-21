@@ -1,6 +1,6 @@
 if ( Meteor.users.find().count() === 0 ) {
   Accounts.createUser({
-    username: 'kt',
+    username: 'keighty',
     email: 'kt@example.com',
     password: 'foobar'
   });
