@@ -1,1 +1,9 @@
-/* CSS declarations go here */
+.notes {
+  margin-top: 1em;
+  width: 55%;
+  height: 3em;
+}
+
+.item-banner {
+  border-bottom: solid thin lightgray;
+}
