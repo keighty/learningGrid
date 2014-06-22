@@ -11,3 +11,11 @@ body {
 .item-banner {
   border-bottom: solid thin lightgray;
 }
+
+.lane {
+  text-align: center;
+}
+
+.item-btn {
+  margin-top: 0.5em;
+}

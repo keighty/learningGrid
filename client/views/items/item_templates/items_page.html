@@ -1,13 +1,15 @@
 <template name="itemsPage">
-  {{>itemSubmit}}
+  <div class="pagination-centered">
+    {{>itemSubmit}}
+  </div>
   <div class="row">
-    <div class="span4">
+    <div class="span4 lane">
       {{> gotIt}}
     </div>
-    <div class="span4">
+    <div class="span4 lane">
       {{> learnIt}}
     </div>
-    <div class="span4">
+    <div class="span4 lane">
       {{> oneDay}}
     </div>
   </div>
