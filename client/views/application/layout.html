@@ -3,7 +3,11 @@
     {{> header}}
     {{> errors}}
     <div id="main" class="container">
-      {{> yield}}
+      {{#if currentUser}}
+        {{> yield}}
+      {{else}}
+        {{> welcome}}
+      {{/if}}
     </div>
   </div>
 </template>

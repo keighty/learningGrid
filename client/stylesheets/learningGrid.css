@@ -1,3 +1,7 @@
+body {
+  background: url("/images/knitting250px.png");
+}
+
 .notes {
   margin-top: 1em;
   width: 55%;
