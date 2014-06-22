@@ -24,9 +24,5 @@ Template.itemResourceForm.events({
         notes.val('');
       }
     });
-  },
-  'click .toggle-form': function(e, t) {
-    console.log(e);
-    $('.resources-form').toggleClass('hidden');
   }
 });
