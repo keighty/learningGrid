@@ -11,7 +11,8 @@ Template.itemResourceForm.events({
       title: title.val(),
       url: url.val(),
       notes: notes.val(),
-      submitted: new Date().getTime()
+      submitted: new Date().getTime(),
+      itemId: currentItemId
     };
 
     Items.update(currentItemId, { $addToSet: {resources: detailProperties} }, function(error) {

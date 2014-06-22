@@ -1,7 +1,10 @@
 <template name="resource">
   <div class="resource span5">
-    <h5>{{title}} <small><a href="{{url}}">{{domain url}}</a></small></h5>
-    <button type="button" class="close delete-resource">&times;</button>
+    <h5>
+      <span class="glyphicon glyphicon-remove-circle delete-resource"></span>
+      {{title}}
+      <small><a href="{{url}}"> {{domain url}}</a></small>
+    </h5>
     <p>{{notes}}</p>
   </div>
 </template>

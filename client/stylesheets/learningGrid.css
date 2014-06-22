@@ -23,3 +23,8 @@ body {
 .hidden {
   display: none;
 }
+
+.delete-resource {
+  color: #666;
+  margin-right: 0.75em;
+}
