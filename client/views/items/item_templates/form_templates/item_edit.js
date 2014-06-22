@@ -15,6 +15,7 @@ Template.itemEdit.events({
       else
         Router.go('itemPage', {_id: currentItemId});
     });
+    Session.set('editing_item', false);
   }
 });
 

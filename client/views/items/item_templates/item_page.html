@@ -1,11 +1,12 @@
 <template name="itemPage">
   <div class="row">
-    <div class="span2">
-      {{> sideNav}}
-    </div>
-    <div class="span10">
-      <h3 class="item-banner">{{title}} <small>: {{description}}</small></h3>
-      {{> itemResourceForm}}
+    <div class="span10 offset2">
+      {{#if editItem}}
+        {{> itemEdit}}
+      {{else}}
+        {{> itemHeader}}
+        {{> itemResourceForm}}
+      {{/if}}
       {{> itemResources}}
     </div>
   </div>

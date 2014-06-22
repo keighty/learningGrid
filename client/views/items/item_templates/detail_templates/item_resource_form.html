@@ -1,11 +1,16 @@
 <template name="itemResourceForm">
-  <p><small>Add resources</small></p>
-  <form class="form-inline">
+  <p>
+    <span class="label label-success toggle-form">
+    <small>Add resources</small>
+      <span class="glyphicon glyphicon-plus"></span>
+    </span>
+  </p>
+  <form class="form-inline resources-form hidden">
     <input name="title" type="text" placeholder="Title" />
     <input name="url" type="text" placeholder="Url" />
-    <input type="submit" value="Submit" class="btn btn-primary" />
     <p>
     <textarea class="notes" name="notes" rows="3" placeholder="notes"></textarea>
+    <input type="submit" value="Submit" class="btn btn-primary" />
     </p>
   </form>
 </template>
