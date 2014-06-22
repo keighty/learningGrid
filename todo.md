@@ -13,6 +13,7 @@
 *[X] error handling.
 *[X] add sub-collection for adding sources/urls to learning page
 *[X] restrict items to single user
-*[ ] add background styling to swimlanes
-*[ ] add template for non-logged in users
-*[ ] remove edit form and make it possible to edit the text directly (~1400)
+*[X] add background styling to swimlanes
+*[X] add template for non-logged in users
+*[X] remove edit form and make it possible to edit the text directly (~1400)
+*[ ] take screenshots for welcome screen
