@@ -11,5 +11,8 @@
 *[X] itemEdit template, actions, and routes
 *[X] itemSubmit template, actions and routes
 *[X] error handling.
-*[ ] add sub-collection for adding sources/urls to learning page
-*[ ] restrict items to single user
+*[X] add sub-collection for adding sources/urls to learning page
+*[X] restrict items to single user
+*[ ] add background styling to swimlanes
+*[ ] add template for non-logged in users
+*[ ] remove edit form and make it possible to edit the text directly (~1400)
