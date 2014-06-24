@@ -16,4 +16,4 @@
 *[X] add background styling to swimlanes
 *[X] add template for non-logged in users
 *[X] remove edit form and make it possible to edit the text directly (~1400)
-*[ ] take screenshots for welcome screen
+*[X] take screenshots for welcome screen
