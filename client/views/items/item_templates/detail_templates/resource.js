@@ -2,7 +2,7 @@ Template.resource.helpers({
   domain: function(url) {
     var a = document.createElement('a');
     a.href = url;
-    return a.hostname !== "localhost" ? a.hostname : url;
+    return a.hostname !== "learninggrid.meteor.com" ? a.hostname : url;
   }
 });
 
