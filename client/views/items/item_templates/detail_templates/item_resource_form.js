@@ -15,9 +15,9 @@ Template.itemResourceForm.events({
       itemId: currentItemId
     };
 
-    if(!detailProperties.title)
-      throwError("You must include a title.");
-    else {
+    if(!detailProperties.title || resourceUsed(detailProperties.title)){
+      throwError("You must include a unique title.");
+    } else {
       Items.update(currentItemId, { $addToSet: {resources: detailProperties} }, function(error) {
         if(error) {
           throwError(error.reason);
@@ -27,6 +27,16 @@ Template.itemResourceForm.events({
           notes.val('');
         }
       });
+    }
+
+    function resourceUsed(title) {
+      var item = Items.findOne(currentItemId);
+      for (var i = 0; i < item.resources.length; i++) {
+          if (item.resources[i].title === title) {
+              return true;
+          }
+      }
+      return false;
     }
   }
 });
