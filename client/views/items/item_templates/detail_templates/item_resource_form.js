@@ -31,10 +31,12 @@ Template.itemResourceForm.events({
 
     function resourceUsed(title) {
       var item = Items.findOne(currentItemId);
-      for (var i = 0; i < item.resources.length; i++) {
+      if(item.resources) {
+        for (var i = 0; i < item.resources.length; i++) {
           if (item.resources[i].title === title) {
-              return true;
+            return true;
           }
+        }
       }
       return false;
     }
