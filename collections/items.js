@@ -23,7 +23,6 @@ Meteor.methods({
       return item._id;
     } else {
       throw new Meteor.Error(422, "Your item was not saved. Try again.");
-      return;
     }
   }
 });
