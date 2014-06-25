@@ -21,5 +21,5 @@
 Bugs
 ====
 *[X] allow links to not be headed by http://
-*[ ] check if multiple resources with the same name can be deleted out of order
-*[ ] make resource titles required and unique
+*[X] check if multiple resources with the same name can be deleted out of order
+*[X] make resource titles required and unique
