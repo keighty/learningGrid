@@ -17,3 +17,8 @@
 *[X] add template for non-logged in users
 *[X] remove edit form and make it possible to edit the text directly (~1400)
 *[X] take screenshots for welcome screen
+
+Bugs
+====
+*[X] allow links to not be headed by http://
+*[ ] check if multiple resources with the same name can be deleted out of order
