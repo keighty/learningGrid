@@ -15,14 +15,18 @@ Template.itemResourceForm.events({
       itemId: currentItemId
     };
 
-    Items.update(currentItemId, { $addToSet: {resources: detailProperties} }, function(error) {
-      if(error) {
-        throwError(error.reason);
-      } else {
-        title.val('');
-        url.val('');
-        notes.val('');
-      }
-    });
+    if(!detailProperties.title)
+      throwError("You must include a title.");
+    else {
+      Items.update(currentItemId, { $addToSet: {resources: detailProperties} }, function(error) {
+        if(error) {
+          throwError(error.reason);
+        } else {
+          title.val('');
+          url.val('');
+          notes.val('');
+        }
+      });
+    }
   }
 });
