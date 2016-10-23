@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import Resource from './Resource.jsx'
+import Item from './Item.jsx'
 
 export default class App extends Component {
   getItems() {
@@ -12,18 +12,35 @@ export default class App extends Component {
   }
 
   renderItems() {
-    return this.getItems().map(item => <Resource key={item._id} item={item} />)
+    return this.getItems().map(item => <Item key={item._id} item={item} />)
   }
 
   render() {
     return (
       <div className='container'>
-        <header>
-          <h1>Item List</h1>
+        <header className='u-full-width'>
+          <h1>Learning Grid</h1>
         </header>
-        <ul>
-          {this.renderItems()}
-        </ul>
+        <div className='row'>
+          <div className='one-third column comfort'>
+            <h3>Comfort<br />Zone</h3>
+            <ul>
+              {this.renderItems()}
+            </ul>
+          </div>
+          <div className='one-third column learning'>
+            <h3>Learning<br />Zone</h3>
+            <ul>
+              {this.renderItems()}
+            </ul>
+          </div>
+          <div className='one-third column terror'>
+            <h3>Terror<br />Zone</h3>
+            <ul>
+              {this.renderItems()}
+            </ul>
+          </div>
+        </div>
       </div>
     )
   }

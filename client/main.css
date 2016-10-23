@@ -1,1 +1,15 @@
-/* CSS declarations go here */
+.comfort {
+  background-image: url('/images/comfort.png');
+}
+
+.learning {
+  background-image: url('/images/learning.png');
+}
+
+.terror {
+  background-image: url('/images/terror.png');
+}
+
+.comfort, .learning, .terror {
+  padding: 15px;
+}
