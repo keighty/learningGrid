@@ -5,14 +5,18 @@ import Item from './Item.jsx'
 export default class App extends Component {
   getItems() {
     return [
-      {_id: 1, text: 'item1'},
-      {_id: 2, text: 'item2'},
-      {_id: 3, text: 'item3'},
+      {_id: 1, text: 'item1', category: 'comfort'},
+      {_id: 2, text: 'item2', category: 'learning'},
+      {_id: 3, text: 'item3', category: 'terror'},
+      {_id: 4, text: 'item4', category: 'terror'},
+      {_id: 5, text: 'item5', category: 'comfort'},
     ]
   }
 
-  renderItems() {
-    return this.getItems().map(item => <Item key={item._id} item={item} />)
+  renderItems(category) {
+    return this.getItems()
+              .filter(item => item.category === category)
+              .map(item => <Item key={item._id} item={item} />)
   }
 
   render() {
@@ -25,19 +29,19 @@ export default class App extends Component {
           <div className='one-third column comfort'>
             <h3>Comfort<br />Zone</h3>
             <ul>
-              {this.renderItems()}
+              {this.renderItems('comfort')}
             </ul>
           </div>
           <div className='one-third column learning'>
             <h3>Learning<br />Zone</h3>
             <ul>
-              {this.renderItems()}
+              {this.renderItems('learning')}
             </ul>
           </div>
           <div className='one-third column terror'>
             <h3>Terror<br />Zone</h3>
             <ul>
-              {this.renderItems()}
+              {this.renderItems('terror')}
             </ul>
           </div>
         </div>
