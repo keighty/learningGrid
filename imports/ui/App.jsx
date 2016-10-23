@@ -1,20 +1,13 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
+import { createContainer } from 'meteor/react-meteor-data'
 
+import { Items } from '../api/items.js'
 import Item from './Item.jsx'
 
-export default class App extends Component {
-  getItems() {
-    return [
-      {_id: 1, text: 'item1', category: 'comfort'},
-      {_id: 2, text: 'item2', category: 'learning'},
-      {_id: 3, text: 'item3', category: 'terror'},
-      {_id: 4, text: 'item4', category: 'terror'},
-      {_id: 5, text: 'item5', category: 'comfort'},
-    ]
-  }
+class App extends Component {
 
   renderItems(category) {
-    return this.getItems()
+    return this.props.items
               .filter(item => item.category === category)
               .map(item => <Item key={item._id} item={item} />)
   }
@@ -50,3 +43,13 @@ export default class App extends Component {
   }
 
 }
+
+App.propTypes = {
+  items: PropTypes.array.isRequired,
+}
+
+export default createContainer(() => {
+  return {
+    items: Items.find({}).fetch(),
+  }
+}, App)
