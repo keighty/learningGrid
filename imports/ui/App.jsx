@@ -7,6 +7,15 @@ import Item from './Item.jsx'
 
 
 class App extends Component {
+  renderGroups(category) {
+    return (
+      <div className={`one-third column ${category}`}>
+        <h3>{category} zone</h3>
+        {this.renderItems(category)}
+      </div>
+    )
+  }
+
   renderItems(category) {
     return this.props.items
               .filter(item => item.category === category)
@@ -32,7 +41,7 @@ class App extends Component {
   }
 
   render() {
-    const options = [ 'one', 'two', 'three' ]
+    const groups = [ 'comfort', 'learning', 'terror' ]
 
     return (
       <div className='container'>
@@ -51,18 +60,9 @@ class App extends Component {
           </form>
         </header>
         <div className='row'>
-          <div className='one-third column comfort'>
-            <h3>Comfort<br />Zone</h3>
-            {this.renderItems('comfort')}
-          </div>
-          <div className='one-third column learning'>
-            <h3>Learning<br />Zone</h3>
-            {this.renderItems('learning')}
-          </div>
-          <div className='one-third column terror'>
-            <h3>Terror<br />Zone</h3>
-            {this.renderItems('terror')}
-          </div>
+          {this.renderGroups('comfort')}
+          {this.renderGroups('learning')}
+          {this.renderGroups('terror')}
         </div>
       </div>
     )
