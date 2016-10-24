@@ -13,3 +13,8 @@
 .comfort, .learning, .terror {
   padding: 15px;
 }
+
+.remove {
+  color: lightslategrey;
+  padding-left: 20px;
+}

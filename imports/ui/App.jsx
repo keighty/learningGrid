@@ -53,21 +53,15 @@ class App extends Component {
         <div className='row'>
           <div className='one-third column comfort'>
             <h3>Comfort<br />Zone</h3>
-            <ul>
-              {this.renderItems('comfort')}
-            </ul>
+            {this.renderItems('comfort')}
           </div>
           <div className='one-third column learning'>
             <h3>Learning<br />Zone</h3>
-            <ul>
-              {this.renderItems('learning')}
-            </ul>
+            {this.renderItems('learning')}
           </div>
           <div className='one-third column terror'>
             <h3>Terror<br />Zone</h3>
-            <ul>
-              {this.renderItems('terror')}
-            </ul>
+            {this.renderItems('terror')}
           </div>
         </div>
       </div>
