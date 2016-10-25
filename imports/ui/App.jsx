@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { createContainer } from 'meteor/react-meteor-data'
 
 import { Items } from '../api/items.js'
-import Item from './Item.jsx'
+import { Item } from './Item.jsx'
 
 
 class App extends Component {
