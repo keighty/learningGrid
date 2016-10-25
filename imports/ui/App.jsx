@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react'
+import Dragula from 'react-dragula'
 import ReactDOM from 'react-dom'
 import { createContainer } from 'meteor/react-meteor-data'
 
@@ -9,11 +10,17 @@ import { Item } from './Item.jsx'
 class App extends Component {
   renderGroups(category) {
     return (
-      <div className={`one-third column ${category}`}>
+      <div className={`one-third column ${category}`} ref={this.dragulaDecorator}>
         <h3>{category} zone</h3>
         {this.renderItems(category)}
       </div>
     )
+  }
+
+  dragulaDecorator = (componentBackingInstance) => {
+    Dragula([document.querySelector('.comfort'),
+              document.querySelector('.learning'),
+              document.querySelector('.terror')])
   }
 
   removeItem(id) {
