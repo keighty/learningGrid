@@ -16,10 +16,14 @@ class App extends Component {
     )
   }
 
+  removeItem(id) {
+    Items.remove(id)
+  }
+
   renderItems(category) {
     return this.props.items
               .filter(item => item.category === category)
-              .map(item => <Item key={item._id} item={item} />)
+              .map(item => <Item key={item._id} item={item} removeItem={this.removeItem}/>)
   }
 
   handleSubmit(e) {
