@@ -54,10 +54,17 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.state.dragger.on('drop', function (el, target, source, sibling) {
+    const groups = [ 'comfort', 'learning', 'terror' ]
+    const {dragger} = this.state
+
+    groups.forEach((category) => {
+      const container = document.querySelector(`.${category}`)
+      dragger.containers.push(container)
+    })
+
+    dragger.on('drop', function (el, target, source, sibling) {
       const itemId = el.getAttribute('id')
       const category = target.getAttribute('id')
-      console.log(Items.find(itemId))
 
       Items.update(itemId, {
         $set: { category },
@@ -66,13 +73,7 @@ class App extends Component {
   }
 
   render() {
-    const groups = [ 'comfort', 'learning', 'terror' ]
-    const {dragger} = this.state
 
-    groups.forEach((category) => {
-      const container = document.querySelector(`.${category}`)
-      dragger.containers.push(container)
-    })
 
     return (
       <div className='container'>
