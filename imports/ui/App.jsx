@@ -6,25 +6,27 @@ import { createContainer } from 'meteor/react-meteor-data'
 import { Items } from '../api/items.js'
 import { Item } from './Item.jsx'
 
-
 class App extends Component {
+  constructor(props, context) {
+    super(props, context)
+    const dragger = Dragula()
+    this.state = { dragger }
+  }
   renderGroups(category) {
     return (
-      <div className={`one-third column ${category}`} ref={this.dragulaDecorator}>
+      <div id={category} className={`one-third column ${category}`}>
         <h3>{category} zone</h3>
         {this.renderItems(category)}
       </div>
     )
   }
 
-  dragulaDecorator = (componentBackingInstance) => {
-    Dragula([document.querySelector('.comfort'),
-              document.querySelector('.learning'),
-              document.querySelector('.terror')])
-  }
-
   removeItem(id) {
     Items.remove(id)
+  }
+
+  updateCategory(id, category) {
+    Items.update(id, {$set: {category: category}})
   }
 
   renderItems(category) {
@@ -51,8 +53,26 @@ class App extends Component {
     node1.value = ''
   }
 
+  componentDidMount() {
+    this.state.dragger.on('drop', function (el, target, source, sibling) {
+      const itemId = el.getAttribute('id')
+      const category = target.getAttribute('id')
+      console.log(Items.find(itemId))
+
+      Items.update(itemId, {
+        $set: { category },
+      });
+    })
+  }
+
   render() {
     const groups = [ 'comfort', 'learning', 'terror' ]
+    const {dragger} = this.state
+
+    groups.forEach((category) => {
+      const container = document.querySelector(`.${category}`)
+      dragger.containers.push(container)
+    })
 
     return (
       <div className='container'>
