@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import Dragula from 'react-dragula'
 import ReactDOM from 'react-dom'
 import { createContainer } from 'meteor/react-meteor-data'
+import 'string-titlecase'
 
 import { Items } from '../api/items.js'
 import { Item } from './Item.jsx'
@@ -27,12 +28,6 @@ class App extends Component {
 
   updateCategory(id, category) {
     Items.update(id, {$set: {category: category}})
-  }
-
-  renderItems(category) {
-    return this.props.items
-              .filter(item => item.category === category)
-              .map(item => <Item key={item._id} item={item} removeItem={this.removeItem}/>)
   }
 
   handleSubmit(e) {
@@ -72,8 +67,15 @@ class App extends Component {
     })
   }
 
-  render() {
 
+  renderItems(category) {
+    return this.props.items
+              .filter(item => item.category === category)
+              .map(item => <Item key={item._id} item={item} removeItem={this.removeItem}/>)
+  }
+
+  render() {
+    const groups = [ 'comfort', 'learning', 'terror' ]
 
     return (
       <div className='container'>
@@ -81,9 +83,7 @@ class App extends Component {
           <h1>Learning Grid</h1>
           <form className="new-task" onSubmit={this.handleSubmit.bind(this)} >
             <select ref="categorySelect">
-              <option value="comfort">Comfort Zone</option>
-              <option value="learning">Learning Zone</option>
-              <option value="terror">Terror Zone</option>
+              {groups.map(category => <option value='category'>{category.titlecase()} Zone</option>)}
             </select>
             <input
               type="text"
@@ -92,9 +92,7 @@ class App extends Component {
           </form>
         </header>
         <div className='row'>
-          {this.renderGroups('comfort')}
-          {this.renderGroups('learning')}
-          {this.renderGroups('terror')}
+          {groups.map(category => this.renderGroups(category))}
         </div>
       </div>
     )

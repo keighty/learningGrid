@@ -10,6 +10,7 @@
     "react": "15.3.2",
     "react-addons-pure-render-mixin": "15.3.2",
     "react-dom": "15.3.2",
-    "react-dragula": "1.1.17"
+    "react-dragula": "1.1.17",
+    "string-titlecase": "1.1.0"
   }
 }
